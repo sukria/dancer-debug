@@ -1,0 +1,16 @@
+[30912]  warn @0.000413> [hit #1] THIS IS A LOG in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[30912] error @0.000553> [hit #1] THIS IS AN ERROR in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[30912]  warn @0.000390> [hit #4] THIS IS A LOG in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[30912] error @0.000515> [hit #4] THIS IS AN ERROR in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[30912]  warn @0.000402> [hit #6] THIS IS A LOG in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[30912] error @0.000521> [hit #6] THIS IS AN ERROR in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[30912]  warn @0.000434> [hit #8] THIS IS A LOG in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[30912] error @0.000558> [hit #8] THIS IS AN ERROR in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[30912]  warn @0.000420> [hit #9] THIS IS A LOG in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[30912] error @0.000549> [hit #9] THIS IS AN ERROR in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[30991]  warn @0.000388> [hit #1] THIS IS A LOG in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[30991] error @0.001183> [hit #1] THIS IS AN ERROR in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[31205]  warn @0.000421> [hit #1] THIS IS A LOG in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[31205] error @0.000535> [hit #1] THIS IS AN ERROR in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[31260]  warn @0.000435> [hit #1] THIS IS A LOG in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
+[31260] error @0.000549> [hit #1] THIS IS AN ERROR in /home/franck/perl5/perlbrew/perls/perl-5.12.0/lib/site_perl/5.12.0/Class/Method/Modifiers.pm l. 74
