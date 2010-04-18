@@ -11,26 +11,31 @@ my $psgi_env;
 install_modifier 'Dancer::Logger', 'around', 'warning' => sub {
     my $orig = shift;
     my $self = shift;
-    $psgi_env->{'plack.middleware.dancer_log'} .= "[warning] $_[0]\n";
+    _add_log( 'warning', $_[0] );
     $self->$orig(@_);
 };
 
 install_modifier 'Dancer::Logger', 'around', 'error' => sub {
     my $orig = shift;
     my $self = shift;
-    $psgi_env->{'plack.middleware.dancer_log'} .= "[error] $_[0]\n";
+    _add_log( 'error', $_[0] );
     $self->$orig(@_);
 };
 
 install_modifier 'Dancer::Logger', 'around', 'debug' => sub {
     my $orig = shift;
     my $self = shift;
-    $psgi_env->{'plack.middleware.dancer_log'} .= "[debug] $_[0]\n";
+    _add_log( 'debug', $_[0] );
     $self->$orig(@_);
 };
 
+sub _add_log {
+    my ( $level, $msg ) = @_;
+    push @{ $psgi_env->{'plack.middleware.dancer_log'} }, $level, $msg;
+}
+
 sub run {
-    my($self, $env, $panel) = @_;
+    my ( $self, $env, $panel ) = @_;
     $psgi_env = $env;
 
     return sub {
@@ -38,10 +43,8 @@ sub run {
 
         $panel->title('Dancer::Logger');
         $panel->nav_subtitle('Dancer::Logger');
-        my $log = delete $env->{'plack.middleware.dancer_log'};
-        if ($log) {
-            $panel->content("<pre>$log</pre>");
-        }
+        my $logs = delete $env->{'plack.middleware.dancer_log'};
+        $panel->content( sub { $self->render_list_pairs($logs) } );
         $psgi_env = undef;
     };
 }
