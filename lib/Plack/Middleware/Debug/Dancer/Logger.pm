@@ -5,7 +5,6 @@ use warnings;
 use parent qw(Plack::Middleware::Debug::Base);
 use Dancer::Logger;
 use Class::Method::Modifiers qw(install_modifier);
-our $VERSION = '0.07';
 
 # XXX Not thread/Coro/AE safe. Should use $c->env or something
 my $psgi_env;
@@ -37,6 +36,8 @@ sub run {
     return sub {
         my $res = shift;
 
+        $panel->title('Dancer::Logger');
+        $panel->nav_subtitle('Dancer::Logger');
         my $log = delete $env->{'plack.middleware.dancer_log'};
         if ($log) {
             $panel->content("<pre>$log</pre>");

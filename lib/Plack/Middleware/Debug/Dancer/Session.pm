@@ -11,6 +11,8 @@ sub run {
     return sub {
         my $session = Dancer::Session->get();
         my @settings = map { $_ => $session->{$_}} keys %$session;
+        $panel->title('Dancer::Session');
+        $panel->nav_subtitle("Dancer::Session");
         $panel->content( sub { $self->render_list_pairs( \@settings ) } );
     };
 }

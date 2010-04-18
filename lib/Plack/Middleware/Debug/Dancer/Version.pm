@@ -8,6 +8,8 @@ sub run {
     my ( $self, $env, $panel ) = @_;
 
     return sub {
+        $panel->title('Dancer::Version');
+        $panel->nav_title('Dancer::Version');
         $panel->nav_subtitle($Dancer::VERSION);
     };
 }
