@@ -1,5 +1,7 @@
 package Plack::Middleware::Debug::Dancer::Settings;
-use 5.008;
+
+# ABSTRACT: Settings panel of your Dancer's application
+
 use strict;
 use warnings;
 use parent qw(Plack::Middleware::Debug::Base);

@@ -1,5 +1,7 @@
 package Plack::Middleware::Debug::Dancer::Logger;
-use 5.008;
+
+# ABSTRACT: Log message from you Dancer's application
+
 use strict;
 use warnings;
 use parent qw(Plack::Middleware::Debug::Base);
@@ -50,4 +52,3 @@ sub run {
 }
 
 1;
-__END__

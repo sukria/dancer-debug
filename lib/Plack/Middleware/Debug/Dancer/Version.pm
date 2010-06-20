@@ -1,5 +1,7 @@
 package Plack::Middleware::Debug::Dancer::Version;
-use 5.008;
+
+# ABSTRACT: Show Dancer's version
+
 use strict;
 use warnings;
 use parent qw(Plack::Middleware::Debug::Base);

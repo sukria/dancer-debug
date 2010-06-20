@@ -1,5 +1,7 @@
 package Plack::Middleware::Debug::Dancer::Session;
-use 5.008;
+
+# ABSTRACT: Session panel for your Dancer's application
+
 use strict;
 use warnings;
 use parent qw(Plack::Middleware::Debug::Base);

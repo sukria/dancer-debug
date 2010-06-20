@@ -1,23 +1,27 @@
 package Dancer::Debug;
 
+# ABSTRACT: Extend Plack::Middleware::Debug with some specific panels for Dancer
+
 use strict;
 use warnings;
 our $VERSION = '0.01';
 
 1;
-__END__
-
-=head1 NAME
-
-Dancer::Debug - Extension for Dancer specific panel to L<Plack::Middleware::Debug>
 
 =head1 SYNOPSIS
 
-    my $handler = sub {
-        my $env     = shift;
-        my $request = Dancer::Request->new($env);
-        Dancer->dance($request);
-    };
+You can activate the panels in your development configuration file:
+
+    plack_middlewares:
+      Debug:
+        - panels
+        -
+          - Parameters
+          - Dancer::Version
+          - Dancer::Settings
+          - Dancer::Logger
+
+or in your app.psgi:
 
     $handler = builder {
         enable "Debug",
@@ -27,17 +31,4 @@ Dancer::Debug - Extension for Dancer specific panel to L<Plack::Middleware::Debu
 
 =head1 DESCRIPTION
 
-Dancer::Debug is
-
-=head1 AUTHOR
-
-franck cuny E<lt>franck@lumberjaph.netE<gt>
-
-=head1 SEE ALSO
-
-=head1 LICENSE
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
-=cut
+Dancer::Debug extends L<Plack::Middleware::Debug> with some specific panels for Dancer.
