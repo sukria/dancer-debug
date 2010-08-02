@@ -22,3 +22,13 @@ sub run {
 }
 
 1;
+
+=head1 SYNOPSIS
+
+To activate this panel:
+
+    plack_middlewares:
+      Debug:
+        - panels
+        -
+          - Dancer::Settings

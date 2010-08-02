@@ -4,7 +4,6 @@ package Dancer::Debug;
 
 use strict;
 use warnings;
-our $VERSION = '0.01';
 
 1;
 
@@ -20,6 +19,7 @@ You can activate the panels in your development configuration file:
           - Dancer::Version
           - Dancer::Settings
           - Dancer::Logger
+          - Dancer::Routes
 
 or in your app.psgi:
 

@@ -1,4 +1,7 @@
 Revision history for Perl extension Dancer::Debug
 
+0.02    Mon 02 Aug 2010 12:14:27 PM CEST
+        - add new panel : Routes
+
 0.01    Sun Apr 18 11:28:06 2010
         - original version
