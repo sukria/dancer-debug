@@ -8,27 +8,18 @@ use parent qw(Plack::Middleware::Debug::Base);
 use Dancer::Logger;
 use Class::Method::Modifiers qw(install_modifier);
 
-# XXX Not thread/Coro/AE safe. Should use $c->env or something
+# # XXX Not thread/Coro/AE safe. Should use $c->env or something
 my $psgi_env;
-install_modifier 'Dancer::Logger', 'around', 'warning' => sub {
-    my $orig = shift;
-    my $self = shift;
-    _add_log( 'warning', $_[0] );
-    $self->$orig(@_);
+install_modifier 'Dancer::Logger', 'before', 'error' => sub {
+    _add_log( 'error', @_ );
 };
 
-install_modifier 'Dancer::Logger', 'around', 'error' => sub {
-    my $orig = shift;
-    my $self = shift;
-    _add_log( 'error', $_[0] );
-    $self->$orig(@_);
+install_modifier 'Dancer::Logger', 'before', 'warning' => sub {
+    _add_log( 'warning', @_ );
 };
 
-install_modifier 'Dancer::Logger', 'around', 'debug' => sub {
-    my $orig = shift;
-    my $self = shift;
-    _add_log( 'debug', $_[0] );
-    $self->$orig(@_);
+install_modifier 'Dancer::Logger', 'before', 'debug' => sub {
+    _add_log( 'debug', @_ );
 };
 
 sub _add_log {
@@ -42,14 +33,15 @@ sub run {
 
     return sub {
         my $res = shift;
-
         $panel->title('Dancer::Logger');
         $panel->nav_subtitle('Dancer::Logger');
-        my $logs = delete $env->{'plack.middleware.dancer_log'};
-        $panel->content( sub { $self->render_list_pairs($logs) } );
+        my $logs = delete $env->{'plack.middleware.dancer_log'}
+          if $env->{'plack.middleware.dancer_log'};
+        $panel->content( sub { $self->render_list_pairs($logs) } ) if $logs;
         $psgi_env = undef;
     };
 }
+
 
 1;
 
