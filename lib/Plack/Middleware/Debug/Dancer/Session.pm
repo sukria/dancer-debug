@@ -11,7 +11,7 @@ sub run {
     my ( $self, $env, $panel ) = @_;
 
     return sub {
-        my $session = Dancer::Session->get();
+        my $session = Dancer::Session->get(no_update => 1);
         my @settings = map { $_ => $session->{$_}} keys %$session;
         $panel->title('Dancer::Session');
         $panel->nav_subtitle("Dancer::Session");
