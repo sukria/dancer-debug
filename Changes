@@ -1,5 +1,8 @@
 Revision history for Perl extension Dancer::Debug
 
+0.03_01 Fri 21 Mar 2014 10:23:00 PM PDT
+        - Fix Session Middleware
+
 0.03    Mon 02 Aug 2010 09:24:43 PM CEST
         - don't render log panel if no log is available
 
